@@ -11,8 +11,8 @@ data "nomad_regions" "current" {
 }
 
 locals {
-  aws_region = data.nomad_regions.current.regions[0]
-  azure_region = data.nomad_regions.current.regions[1]
+  aws_region = sort(data.nomad_regions.current.regions)[1]
+  azure_region = sort(data.nomad_regions.current.regions)[0]
 }
 
 resource "nomad_job" "aws_fabio" {
