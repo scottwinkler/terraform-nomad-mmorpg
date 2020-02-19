@@ -1,3 +1,3 @@
 output "browserquest_address" {
-    value = var.fabio_lb
+    value = "http://${var.fabio_lb}"
 }
